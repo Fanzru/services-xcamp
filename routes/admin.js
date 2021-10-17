@@ -1,9 +1,12 @@
 const router = require("express").Router()
-const {registerAdmin} = require('../controllers/admin_controllers')
+const {
+  RegisterAdmin,
+  GetAllAdmin,
+  LoginAdmin
+} = require('../controllers/admin_controllers')
 
-router.route('/register').post(registerAdmin)
+router.route('/register').post(RegisterAdmin)
+router.route('/getalladmin').get(GetAllAdmin)
+router.route('/login').post(LoginAdmin)
 
-router.get('/', async (req,res) => {
-  res.send("Ananda Affan F")
-})
 module.exports = router

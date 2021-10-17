@@ -1,3 +1,5 @@
+
+
 const express = require('express')
 const db = require('./config/mysql_config');
 const bodyParser = require('body-parser')
@@ -7,13 +9,12 @@ const cors = require('cors')
 require('dotenv').config()
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
-app.use(cors)
 
 // route middleware
 const adminRoute = require('./routes/admin')
 
 // cors configurasi
-app.use(cors);
+app.use(cors());
 
 app.use((req,res, next)=>{
   res.setHeader('Access-Control-Allow-Origin','*');
@@ -21,7 +22,7 @@ app.use((req,res, next)=>{
   res.setHeader('Access-Control-Allow-Headers','Content-Type, Authorization');
   next();
 })
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 
 app.use('/api/admin',adminRoute);
 

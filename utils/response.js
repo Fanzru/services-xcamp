@@ -1,4 +1,4 @@
-const response = (res,status,code,message,data) => {
+const Response = (res,status,code,message,data) => {
   let resData
   if (status) resData = data
   else {
@@ -16,7 +16,7 @@ const response = (res,status,code,message,data) => {
 }
 
 // digunakan untuk membuat error baru
-const customError  = (message , status) => {
+const CustomError  = (message , status) => {
   const err = new Error(message)
   err.status = status
   return err
@@ -24,6 +24,6 @@ const customError  = (message , status) => {
 
 
 module.exports = {
-  response,
-  customError
+  Response,
+  CustomError
 }
