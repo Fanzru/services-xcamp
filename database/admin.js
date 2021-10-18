@@ -31,8 +31,13 @@ async function loginAdmin(dataAdmin){
   }
 }
 
+async function deleteAdmin(adminId){
+  return Admin.destroy({where: {id: adminId}})
+}
+
 module.exports = {
   createAdmin,
   getAllAdmin,
-  loginAdmin
+  loginAdmin,
+  deleteAdmin
 }
